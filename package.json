@@ -14,7 +14,7 @@
     "bld:vite": "tsc -b && vite build --outDir=./dist/website",
     "bld:nwjs": "nwbuild --mode=build --flavor=sdk --cacheDir=./node_modules/nw --outDir=./dist/desktop --managedManifest=./package.nw.json --logLevel=debug './package.json ./dist/website/**/*'",
     "lint": "eslint .",
-    "test": "vitest run ."
+    "test": "vitest run ./tests"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
