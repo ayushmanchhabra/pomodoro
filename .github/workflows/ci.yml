@@ -36,3 +36,7 @@ jobs:
         run: npm ci
       - name: Check for linting errors
         run: npm run lint
+      - name: Check for build errors
+        run: npm run bld
+      - name: Execute end to end tests
+        run: npm run test

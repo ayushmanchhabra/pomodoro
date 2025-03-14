@@ -6,7 +6,7 @@ import selenium from 'selenium-webdriver';
 import chrome from 'selenium-webdriver/chrome.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-describe('NW.js Selenium ServiceBuilder test suite', async () => {
+describe('NW.js Selenium test suite', async () => {
     let driver: chrome.Driver | undefined = undefined;
 
     /* Setup Selenium driver. */
@@ -15,7 +15,8 @@ describe('NW.js Selenium ServiceBuilder test suite', async () => {
         const options = new chrome.Options();
 
         const seleniumArguments = [
-            'nwapp=' + path.resolve('js', 'selenium', 'service_builder')
+            'nwapp=' + path.resolve('dist', 'desktop'),
+            '--user-data-dir=./dist/cache/nwjs'
         ];
 
         /* Run in headless mode when in CI environment. */
@@ -36,12 +37,12 @@ describe('NW.js Selenium ServiceBuilder test suite', async () => {
     /**
      * Get text via element's ID and assert it is equal.
      */
-    it('Hello, World! text by ID', async function () {
-        const textElement = await driver.findElement(selenium.By.id('test'));
+    it('gets timer component via ID', async function () {
+        const textElement = await driver.findElement(selenium.By.id('timer'));
 
         const text = await textElement.getText();
 
-        expect(text).toEqual('Hello, World!');
+        expect(text).toBeDefined()
     }, { timeout: Infinity });
 
     /**

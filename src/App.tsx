@@ -33,6 +33,7 @@ function App() {
   return (
     <button
       className={style.Clock}
+      id='timer'
       onClick={handleButtonClick}
       title='Click to start timer, click again to pause.'
     >
