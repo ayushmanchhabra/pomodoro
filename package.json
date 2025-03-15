@@ -14,7 +14,7 @@
     "bld:vite": "tsc -b && vite build --outDir=./dist/website",
     "bld:nwjs": "nwbuild --mode=build --flavor=sdk --cacheDir=./node_modules/nw --outDir=./dist/desktop --managedManifest=./package.nw.json --logLevel=debug './package.json ./dist/website/**/*'",
     "lint": "eslint .",
-    "test": "vitest run ./tests"
+    "test": "vitest run --coverage ./tests"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -27,6 +27,7 @@
     "@types/react-dom": "^19.0.4",
     "@types/selenium-webdriver": "^4.1.28",
     "@vitejs/plugin-react-swc": "^3.8.0",
+    "@vitest/coverage-v8": "^3.0.8",
     "base-volta-off-of-nwjs": "^1.0.5",
     "concurrently": "^9.1.2",
     "eslint": "^9.21.0",
