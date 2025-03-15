@@ -15,8 +15,9 @@ describe('NW.js Selenium test suite', async function () {
         const options = new chrome.Options();
 
         const seleniumArguments = [
-            'nwapp=' + path.resolve('dist', 'desktop'),
-            '--user-data-dir=./dist/cache/nwjs'
+            '--no-sandbox',
+            '--nwapp=' + path.resolve('dist', 'desktop'),
+            '--user-data-dir=./dist/cache/nwjs',
         ];
 
         /* Run in headless mode when in CI environment. */
@@ -43,7 +44,7 @@ describe('NW.js Selenium test suite', async function () {
         const text = await textElement.getText();
 
         expect(text).toBeDefined()
-    }, { timeout: Infinity });
+    }, Infinity );
 
     /**
      * Quit Selenium driver.
