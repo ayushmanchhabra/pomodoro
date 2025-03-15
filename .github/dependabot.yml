@@ -17,3 +17,21 @@ updates:
       gha:
         patterns:
           - "*"
+  - package-ecosystem: "docker"
+    directory: "."
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase
+    groups:
+      npm:
+        patterns:
+          - "*"
+  - package-ecosystem: "docker-compose"
+    directory: "."
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase
+    groups:
+      npm:
+        patterns:
+          - "*"
