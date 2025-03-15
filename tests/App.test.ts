@@ -1,5 +1,4 @@
 import path from 'node:path';
-import process from 'node:process';
 
 import { findpath } from 'nw';
 import selenium from 'selenium-webdriver';
