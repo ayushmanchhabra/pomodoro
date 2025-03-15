@@ -21,6 +21,7 @@ RUN apt install -y libasound2t64
 RUN apt install -y xvfb
 RUN apt install -y libatomic1
 RUN apt install -y curl
+RUN apt install -y xorg
 # Install Volta package manager
 RUN curl https://get.volta.sh | bash
 ENV VOLTA_HOME="/root/.volta"

@@ -21,7 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "typeRoots": ["./src/typings"]
   },
   "include": ["src", "tests/App.test.ts"]
 }

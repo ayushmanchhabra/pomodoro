@@ -15,15 +15,10 @@ describe('NW.js Selenium test suite', async function () {
         const options = new chrome.Options();
 
         const seleniumArguments = [
-            '--no-sandbox',
+            '--headless=new',
             '--nwapp=' + path.resolve('dist', 'desktop'),
-            '--user-data-dir=./dist/cache/nwjs',
+            // '--user-data-dir=' + path.resolve('dist', 'cache', 'nwjs'),
         ];
-
-        /* Run in headless mode when in CI environment. */
-        if (process.env.CI) {
-            seleniumArguments.push('headless=new');
-        }
 
         options.addArguments(...seleniumArguments);
 
