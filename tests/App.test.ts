@@ -7,7 +7,7 @@ import chrome from 'selenium-webdriver/chrome.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 describe('NW.js Selenium test suite', async () => {
-    let driver: chrome.Driver | undefined = undefined;
+    let driver: chrome.Driver = {} as chrome.Driver;
 
     /* Setup Selenium driver. */
     beforeAll(async function () {

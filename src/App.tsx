@@ -11,7 +11,7 @@ function App() {
     let interval: number | undefined = undefined;
 
     if (isTimerRunning) {
-      interval = setInterval(function () {
+      interval = window.setInterval(function () {
         if (second > 0) {
           setSecond(second - 1);
         } else if (second === 0) {
