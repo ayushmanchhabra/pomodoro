@@ -6,7 +6,7 @@ import selenium from 'selenium-webdriver';
 import chrome from 'selenium-webdriver/chrome.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-describe('NW.js Selenium test suite', async () => {
+describe('NW.js Selenium test suite', async function () {
     let driver: chrome.Driver = {} as chrome.Driver;
 
     /* Setup Selenium driver. */
@@ -48,7 +48,7 @@ describe('NW.js Selenium test suite', async () => {
     /**
      * Quit Selenium driver.
      */
-    afterAll(() => {
-        driver.quit();
+    afterAll(async function () {
+        await driver.quit();
     });
 });
