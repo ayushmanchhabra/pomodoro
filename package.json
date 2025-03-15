@@ -9,7 +9,7 @@
     "postinstall": "base-volta-off-of-nwjs",
     "dev": "concurrently -k npm:dev:vite npm:dev:nwjs",
     "dev:vite": "vite dev",
-    "dev:nwjs": "wait-on -c waitOn.config.json http-get://localhost:5173 && nw .",
+    "dev:nwjs": "wait-on -c waitOn.config.json http-get://localhost:5173 && nw --unref .",
     "bld": "npm run bld:vite && npm run bld:nwjs",
     "bld:vite": "tsc -b && vite build --outDir=./dist/website",
     "bld:nwjs": "nwbuild --mode=build --flavor=sdk --cacheDir=./node_modules/nw --outDir=./dist/desktop --managedManifest=./package.nw.json --logLevel=debug './package.json ./dist/website/**/*'",
