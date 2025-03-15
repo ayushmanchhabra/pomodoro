@@ -32,6 +32,8 @@ jobs:
         run: npm ci
       - name: Check for linting errors
         run: npm run lint
+      - name: Run Globstar checks
+        uses: ayushmanchhabra/globstar-action@v0.4.0
       - name: Check for build errors
         run: npm run bld
       - name: Execute end to end tests
